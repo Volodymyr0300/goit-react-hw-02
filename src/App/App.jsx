@@ -1,5 +1,5 @@
-import Description from "./Description/Description";
 import css from "./App.module.css";
+import Description from "./Description/Description";
 import Options from "./Options/Options";
 import Feedback from "./Feedback/Feedback";
 import { useState } from "react";
@@ -11,10 +11,17 @@ function App() {
     bad: 0,
   });
 
+  const updateFeedback = (feedbackType) => {
+    setValues((prevValue) => ({
+      ...prevValue,
+      [feedbackType]: prevValue[feedbackType] + 1,
+    }));
+  };
+
   return (
     <>
       <Description />
-      <Options />
+      <Options updateFeedback={updateFeedback} />
       <Feedback good={values.good} neutral={values.neutral} bad={values.bad} />
     </>
   );
