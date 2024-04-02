@@ -24,7 +24,10 @@ function App() {
     setVisible(true);
   };
 
+  console.log(values);
+
   const resetFeedback = () => {
+    setValues({ good: 0, neutral: 0, bad: 0 });
     setVisible(false);
   };
 
