@@ -24,8 +24,6 @@ function App() {
     setVisible(true);
   };
 
-  console.log(values);
-
   const resetFeedback = () => {
     setValues({ good: 0, neutral: 0, bad: 0 });
     setVisible(false);
@@ -34,7 +32,11 @@ function App() {
   return (
     <>
       <Description />
-      <Options updateFeedback={updateFeedback} resetFeedback={resetFeedback} />
+      <Options
+        updateFeedback={updateFeedback}
+        resetFeedback={resetFeedback}
+        isVisible={isVisible}
+      />
 
       {isVisible ? (
         <Feedback
