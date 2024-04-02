@@ -16,6 +16,8 @@ function App() {
 
   const [isVisible, setVisible] = useState(false);
 
+  const feedbackRate = Math.round((values.good / totalFeedback) * 100);
+
   const updateFeedback = (feedbackType) => {
     setValues((prevValue) => ({
       ...prevValue,
@@ -44,6 +46,7 @@ function App() {
           good={values.good}
           neutral={values.neutral}
           bad={values.bad}
+          feedbackRate={feedbackRate}
         />
       ) : (
         <Notification />
