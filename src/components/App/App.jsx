@@ -22,7 +22,13 @@ function App() {
 
   const totalFeedback = values.good + values.neutral + values.bad;
 
-  const feedbackRate = Math.round((values.good / totalFeedback) * 100);
+  function feedbackRateCounter(totalFeedback) {
+    if (totalFeedback) {
+      return Math.round((values.good / totalFeedback) * 100);
+    }
+  }
+
+  const feedbackRate = feedbackRateCounter(totalFeedback);
 
   const updateFeedback = (feedbackType) => {
     setValues((prevValue) => ({
