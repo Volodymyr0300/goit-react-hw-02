@@ -48,7 +48,7 @@ function App() {
         isVisible={isVisible}
       />
 
-      {isVisible ? (
+      {totalFeedback ? (
         <Feedback
           totalFeedback={totalFeedback}
           good={values.good}
