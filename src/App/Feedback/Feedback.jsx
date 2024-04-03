@@ -14,7 +14,7 @@ export default function Feedback({
         <p>Neutral: {neutral}</p>
         <p>Bad: {bad}</p>
         <p>Total: {totalFeedback}</p>
-        <p>Positive: {feedbackRate}</p>
+        <p>Positive: {`${feedbackRate}%`}</p>
       </div>
     </>
   );
