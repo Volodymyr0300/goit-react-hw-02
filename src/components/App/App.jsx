@@ -14,9 +14,6 @@ function App() {
     return { good: savedGood, neutral: savedNeutral, bad: savedBad };
   });
 
-  console.log(values);
-  console.log(typeof values);
-
   useEffect(() => {
     window.localStorage.setItem("saved-good", values.good);
     window.localStorage.setItem("saved-neutral", values.neutral);
