@@ -22,8 +22,6 @@ function App() {
 
   const totalFeedback = values.good + values.neutral + values.bad;
 
-  const [isVisible, setVisible] = useState(false);
-
   const feedbackRate = Math.round((values.good / totalFeedback) * 100);
 
   const updateFeedback = (feedbackType) => {
@@ -31,12 +29,10 @@ function App() {
       ...prevValue,
       [feedbackType]: prevValue[feedbackType] + 1,
     }));
-    setVisible(true);
   };
 
   const resetFeedback = () => {
     setValues({ good: 0, neutral: 0, bad: 0 });
-    setVisible(false);
   };
 
   return (
@@ -45,7 +41,7 @@ function App() {
       <Options
         updateFeedback={updateFeedback}
         resetFeedback={resetFeedback}
-        isVisible={isVisible}
+        totalFeedback={totalFeedback}
       />
 
       {totalFeedback ? (
